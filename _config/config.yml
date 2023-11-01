@@ -1,3 +1,6 @@
 ---
 Name: goldfinch-video
 ---
+SilverStripe\Assets\File:
+  allowed_extensions:
+    - webm
