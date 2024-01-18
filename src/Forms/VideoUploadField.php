@@ -24,17 +24,26 @@ class VideoUploadField
         self::$parent = $parent;
         self::$record = $parent;
 
-        $field_enable = CheckboxField::create($name . '_enable', 'Enable ' . $title)->setDescription('Before uploading your .mp4, make sure to compress it. You can use online free tool to do so <a href="https://www.freeconvert.com/video-compressor" target="_blank">freeconvert.com</a> / <a href="https://www.mp4compress.com/" target="_blank">mp4compress.com</a>');
+        $field_enable = CheckboxField::create(
+            $name . '_enable',
+            'Enable ' . $title,
+        )->setDescription(
+            'Before uploading your .mp4, make sure to compress it. You can use online free tool to do so <a href="https://www.freeconvert.com/video-compressor" target="_blank">freeconvert.com</a> / <a href="https://www.mp4compress.com/" target="_blank">mp4compress.com</a>',
+        );
 
-        $field_MP4 = UploadField::create($name . '_mp4', $title . ' (mp4)')->setDescription('Before uploading your .mp4, make sure to compress it. You can use online free tool to do so <a href="https://www.freeconvert.com/video-compressor" target="_blank">freeconvert.com</a> / <a href="https://www.mp4compress.com/" target="_blank">mp4compress.com</a>');
+        $field_MP4 = UploadField::create(
+            $name . '_mp4',
+            $title . ' (mp4)',
+        )->setDescription(
+            'Before uploading your .mp4, make sure to compress it. You can use online free tool to do so <a href="https://www.freeconvert.com/video-compressor" target="_blank">freeconvert.com</a> / <a href="https://www.mp4compress.com/" target="_blank">mp4compress.com</a>',
+        );
 
-        $field_WEBM = UploadField::create($name . '_webm', $title . ' (webm)')->setDescription('You can also supply same video in .webm format');
+        $field_WEBM = UploadField::create(
+            $name . '_webm',
+            $title . ' (webm)',
+        )->setDescription('You can also supply same video in .webm format');
 
-        self::$fields = [
-          $field_enable,
-          $field_MP4,
-          $field_WEBM,
-        ];
+        self::$fields = [$field_enable, $field_MP4, $field_WEBM];
     }
 
     public function getFields()
